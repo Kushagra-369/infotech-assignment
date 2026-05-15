@@ -483,3 +483,19 @@ button:focus-visible, a:focus-visible {
 ::-webkit-scrollbar-thumb:hover {
     background: #6366f1;
 }
+.logo{
+    font-size:32px;
+    font-weight:800;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#12344D;
+}
+
+.logo-icon{
+    color:#2563eb;
+    font-size:22px;
+}
+

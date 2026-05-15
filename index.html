@@ -1,672 +1,871 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Infotech | Compliance Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Infotech | Compliance Solutions — Elevated Experience</title>
 
-    <!-- Google Fonts + Font Awesome 6 (free) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #fbfdff;
-            color: #1a2c3e;
-            line-height: 1.5;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fbfdff;
+      color: #1a2c3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-        /* ----- modern, clean navbar with mobile-first approach ----- */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(0, 32, 64, 0.08);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
-        }
+    /* ----- enhanced navbar with micro-interactions (unchanged structure) ----- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 32, 64, 0.08);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.3s, background 0.2s;
+    }
 
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-        }
+    .navbar.scrolled {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.98);
+    }
 
-        /* Logo area */
-        .logo {
-            font-size: 1.7rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #0f2b3d, #1b6b8f);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            white-space: nowrap;
-        }
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
 
-        /* Desktop navigation links */
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            transition: all 0.3s ease;
-        }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0f2b3d, #1b6b8f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      transition: transform 0.2s ease, filter 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: #2c4e6b;
-            transition: 0.2s;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
+    .logo i {
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      color: #1b6b8f;
+      font-size: 1.6rem;
+      transition: transform 0.2s;
+    }
 
-        .nav-links a:hover {
-            color: #0f6b8c;
-        }
+    .logo:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(0 2px 4px rgba(27, 107, 143, 0.2));
+    }
 
-        /* "Contact Us" button style (like in desktop 1440px reference) */
-        .contact-btn {
-            background: #0f2b3d;
-            border: none;
-            padding: 0.6rem 1.6rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            font-family: inherit;
-        }
+    .logo:hover i {
+      transform: rotate(4deg);
+    }
 
-        .contact-btn:hover {
-            background: #1d5a7a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(15, 43, 61, 0.2);
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-        /* Hamburger menu icon (hidden on desktop) */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            background: transparent;
-            border: none;
-            padding: 0.4rem;
-            z-index: 1010;
-        }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c4e6b;
+      transition: 0.2s;
+      font-size: 1rem;
+      white-space: nowrap;
+      position: relative;
+      padding-bottom: 4px;
+    }
 
-        .hamburger span {
-            width: 26px;
-            height: 2.5px;
-            background-color: #0f2b3d;
-            border-radius: 4px;
-            transition: 0.25s ease;
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background: linear-gradient(90deg, #1b6b8f, #3c9bc2);
+      transition: width 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border-radius: 2px;
+    }
 
-        /* Mobile menu overlay + panel */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            max-width: 320px;
-            height: 100vh;
-            background: white;
-            box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
-            z-index: 1050;
-            padding: 5rem 2rem 2rem 2rem;
-            transition: right 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        .mobile-menu.open {
-            right: 0;
-        }
+    .nav-links a:hover {
+      color: #0f6b8c;
+      transform: translateY(-1px);
+    }
 
-        .mobile-menu .mobile-nav-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-        }
+    .contact-btn {
+      background: #0f2b3d;
+      border: none;
+      padding: 0.6rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      font-family: inherit;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
 
-        .mobile-menu .mobile-nav-list li a {
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #1a3a4e;
-            transition: 0.2s;
-            display: block;
-            padding: 0.25rem 0;
-        }
+    .contact-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, #2a7f9c, #0e4057);
+      transition: width 0.35s ease;
+      z-index: -1;
+      border-radius: 40px;
+    }
 
-        .mobile-menu .mobile-nav-list li a:hover {
-            color: #1b6b8f;
-            transform: translateX(6px);
-            display: inline-block;
-        }
+    .contact-btn:hover::before {
+      width: 100%;
+    }
 
-        .mobile-contact-btn {
-            background: #0f2b3d;
-            border: none;
-            padding: 0.85rem 1.5rem;
-            border-radius: 44px;
-            font-weight: 600;
-            font-size: 1rem;
-            color: white;
-            width: 100%;
-            margin-top: 1rem;
-            text-align: center;
-            cursor: pointer;
-            font-family: inherit;
-        }
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px rgba(15, 43, 61, 0.4);
+    }
 
-        .close-menu {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #2c4e6b;
-        }
+    /* Hamburger + mobile styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      padding: 0.4rem;
+      z-index: 1010;
+      transition: all 0.2s;
+    }
 
-        /* overlay backdrop */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
-            z-index: 1040;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.25s;
-        }
+    .hamburger:hover span {
+      background-color: #1b6b8f;
+    }
 
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+    .hamburger span {
+      width: 26px;
+      height: 2.5px;
+      background-color: #0f2b3d;
+      border-radius: 4px;
+      transition: 0.25s ease;
+    }
 
-        /* prevent body scroll when menu open */
-        body.menu-open {
-            overflow: hidden;
-        }
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 75%;
+      max-width: 320px;
+      height: 100vh;
+      background: white;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
+      z-index: 1050;
+      padding: 5rem 2rem 2rem 2rem;
+      transition: right 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
 
-        /* ===== Hero section & features (preserved from your original but polished) ===== */
-        .hero {
-            max-width: 1280px;
-            margin: 3rem auto 2rem auto;
-            padding: 2rem 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2.5rem;
-        }
+    .mobile-menu.open {
+      right: 0;
+    }
 
-        .hero-left {
-            flex: 1;
-            min-width: 280px;
-        }
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
 
-        .hero-left h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            background: linear-gradient(to right, #0a2e42, #166b8f);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
+    .mobile-nav-list li a {
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1a3a4e;
+      transition: 0.2s;
+      display: inline-block;
+      position: relative;
+    }
 
-        .hero-left p {
-            font-size: 1.1rem;
-            color: #3a5b74;
-            max-width: 90%;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
+    .mobile-nav-list li a:hover {
+      color: #1b6b8f;
+      transform: translateX(8px);
+    }
 
-        .hero-btn {
-            background: #0f2b3d;
-            border: none;
-            padding: 0.85rem 2.2rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .mobile-contact-btn {
+      background: #0f2b3d;
+      border: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 44px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      width: 100%;
+      margin-top: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
 
-        .hero-btn:hover {
-            background: #1d5a7a;
-            transform: translateY(-2px);
-        }
+    .mobile-contact-btn:hover {
+      background: #1d5a7a;
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
 
-        .hero-right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
+    .close-menu {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #2c4e6b;
+      transition: transform 0.2s;
+    }
 
-        .hero-right img {
-            max-width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
+    .close-menu:hover {
+      transform: rotate(90deg);
+      color: #1b6b8f;
+    }
 
-        /* Features section */
-        .features {
-            max-width: 1280px;
-            margin: 4rem auto;
-            padding: 2rem 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            background: #ffffff;
-            border-radius: 48px;
-        }
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(2px);
+      z-index: 1040;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.25s;
+    }
 
-        .features-left {
-            flex: 1;
-            min-width: 260px;
-        }
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-        .features-left h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #0e2a3b;
-            margin-bottom: 1.75rem;
-        }
+    body.menu-open {
+      overflow: hidden;
+    }
 
-        .features-left img {
-            width: 100%;
-            border-radius: 28px;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-        }
+    /* ===== Hero Section - FIXED: full image on right, details left, exact alignment ===== */
+    .hero {
+      max-width: 1280px;
+      margin: 3rem auto 2rem auto;
+      padding: 2rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
 
-        .features-right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+    .hero-left {
+      flex: 1;
+      min-width: 280px;
+    }
 
-        .features-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-            background: #eef4fa;
-            padding: 1.2rem 1.6rem;
-            border-radius: 28px;
-            color: #1c5a7a;
-            border-left: 5px solid #1b6b8f;
-        }
+    .hero-left h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(to right, #0a2e42, #166b8f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
 
-        .feature-card {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 1.5rem 1.8rem;
-            box-shadow: 0 10px 20px -5px rgba(0, 32, 64, 0.08);
-            transition: all 0.25s;
-            border: 1px solid rgba(27, 107, 143, 0.1);
-        }
+    .hero-left p {
+      font-size: 1.1rem;
+      color: #3a5b74;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      max-width: 95%;
+    }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -12px rgba(15, 67, 92, 0.15);
-        }
+    .hero-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
 
-        .feature-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #0f2b3d;
-        }
+    .hero-btn {
+      background: #0f2b3d;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
 
-        .feature-card h3::before {
-            content: "✓";
-            font-weight: 800;
-            background: #e0f0f7;
-            width: 28px;
-            height: 28px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            color: #1b6b8f;
-            font-size: 1rem;
-        }
+    .hero-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #1b6b8f, #2f93b3);
+      transition: left 0.4s ease;
+      z-index: -1;
+    }
 
-        .feature-card p {
-            color: #496f89;
-        }
+    .hero-btn:hover::before {
+      left: 0;
+    }
 
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        /* Tablet: 768px - reference: second screenshot shows hamburger or simplified? 
-           According to second image, tablet and mobile show hamburger style with logo + contact / menu.
-           We implement: on screens <= 900px, we hide desktop nav links & show hamburger, also adjust contact button */
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
+    .hero-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px -8px rgba(15, 43, 61, 0.35);
+    }
 
-            .desktop-contact {
-                display: none;
-            }
+    .consult-outline {
+      background: transparent;
+      border: 1.5px solid #1b6b8f;
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1b6b8f;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-            .hamburger {
-                display: flex;
-            }
+    .consult-outline:hover {
+      background: #e7f2f7;
+      transform: translateY(-2px);
+      border-color: #0f5a78;
+      box-shadow: 0 6px 14px rgba(27, 107, 143, 0.15);
+    }
 
-            .nav-container {
-                padding: 0.9rem 1.5rem;
-            }
-        }
+    /* HERO RIGHT IMAGE - LARGE, SMOOTH, DOMINANT ON DESKTOP */
+    .hero-right {
+      flex: 1.1;
+      display: flex;
+      justify-content: flex-end;
+      min-width: 280px;
+    }
 
-        /* for screens > 900px we show desktop items but no mobile menu visible */
-        @media (min-width: 901px) {
-            .mobile-menu,
-            .menu-overlay,
-            .hamburger {
-                display: none;
-            }
-            .desktop-contact {
-                display: inline-block;
-            }
-        }
+    .hero-right img {
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.35s ease, box-shadow 0.3s;
+      object-fit: cover;
+    }
 
-        /* for smaller tablets and mobiles: adjust hero text */
-        @media (max-width: 768px) {
-            .hero-left h1 {
-                font-size: 2.4rem;
-            }
-            .hero-left p {
-                max-width: 100%;
-            }
-            .hero, .features {
-                flex-direction: column;
-            }
-            .features-left h2 {
-                font-size: 1.8rem;
-            }
-            .nav-container {
-                padding: 0.8rem 1.25rem;
-            }
-            .logo {
-                font-size: 1.5rem;
-            }
-        }
+    .hero-right img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.25);
+    }
 
-        @media (max-width: 480px) {
-            .hero {
-                margin-top: 1rem;
-                padding: 1rem 1.25rem;
-            }
-            .hero-left h1 {
-                font-size: 1.9rem;
-            }
-            .hero-btn {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.9rem;
-            }
-            .feature-card {
-                padding: 1.2rem;
-            }
-            .features-text {
-                font-size: 0.95rem;
-            }
-        }
+    /* ===== Features Section (exactly as original, no extra sections) ===== */
+    .features {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 2rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      background: #ffffff;
+      border-radius: 48px;
+      align-items: center;
+    }
 
-        /* smooth transition for everything */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+    .features-left {
+      flex: 1;
+    }
 
-        /* fallback for missing images */
-        .hero-right img, .features-left img {
-            background: #eef2f5;
-        }
-    </style>
+    .features-left h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #0e2a3b;
+      margin-bottom: 1.75rem;
+    }
+
+    .features-left img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, filter 0.2s;
+      object-fit: cover;
+    }
+
+    .features-left img:hover {
+      transform: scale(1.01);
+      filter: brightness(0.98) contrast(1.02);
+      box-shadow: 0 25px 35px -16px rgba(27, 107, 143, 0.2);
+    }
+
+    .features-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .features-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+      background: #eef4fa;
+      padding: 1.2rem 1.6rem;
+      border-radius: 28px;
+      color: #1c5a7a;
+      border-left: 5px solid #1b6b8f;
+      transition: all 0.25s;
+      cursor: default;
+    }
+
+    .features-text:hover {
+      background: #e3eff8;
+      transform: translateX(6px);
+      border-left-width: 8px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 10px 20px -5px rgba(0, 32, 64, 0.08);
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+      border: 1px solid rgba(27, 107, 143, 0.1);
+      cursor: pointer;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 24px 36px -14px rgba(15, 67, 92, 0.2);
+      border-color: rgba(27, 107, 143, 0.3);
+      background: #ffffff;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #0f2b3d;
+      transition: color 0.2s;
+    }
+
+    .feature-card:hover h3 {
+      color: #1b6b8f;
+    }
+
+    .feature-card h3::before {
+      content: "✓";
+      font-weight: 800;
+      background: #e0f0f7;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      color: #1b6b8f;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .feature-card:hover h3::before {
+      background: #1b6b8f;
+      color: white;
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    .feature-card p {
+      color: #496f89;
+      transition: color 0.2s;
+    }
+
+    .feature-card:hover p {
+      color: #2c4e6b;
+    }
+
+    /* responsiveness: image moves below on smaller screens */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .desktop-contact {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 901px) {
+
+      .mobile-menu,
+      .menu-overlay,
+      .hamburger {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-left h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-left p {
+        max-width: 100%;
+      }
+
+      .hero,
+      .features {
+        flex-direction: column;
+      }
+
+      .hero-right {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero-right img {
+        max-width: 100%;
+      }
+
+      .features-left h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-left h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero-btn-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    /* scroll top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #0f2b3d;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s;
+      z-index: 99;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border: none;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background: #1b6b8f;
+      transform: translateY(-5px);
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="nav-container">
-        <!-- Logo same as reference: "Logo" text (modern but minimal) -->
-        <div class="logo">Logo</div>
-
-        <!-- Desktop Navigation (Home, About Us, Our Services, Pricing, FAQ, Contact) 
-             exactly as per first screenshot: Home   About Us   Our Services   Pricing   FAQ   Contact -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- Contact Us button (visible on desktop & tablet but hidden on mobile inside this container, 
-             because according to second image at tablet 768px they still show "Contact Us" button inline? 
-             In your second image: "Tablet 768px: Logo | Contact Us" — that's exactly a button next to logo.
-             We'll handle it: on tablet (max-width: 900px) we hide desktop-contact and show hamburger, 
-             but also inside the nav-container we need to show a visible contact button for tablet? 
-             Actually second image shows tablet layout: "Logo" and then "Contact Us" as a button without menu items.
-             We'll adapt: on tablet range (≤900px and > 480px) we show a small contact button inline (next to hamburger)
-             but also keep the hamburger. Better implement: for tablet device up to 900px, we show hamburger + inline contact pill.
-             Let's refine: desktop-contact class will be hidden on <901px, but we'll add a .tablet-contact-btn that appears only on tablet/mobile alongside hamburger.
-        -->
-        <button class="contact-btn desktop-contact">Contact Us</button>
-
-        <!-- Hamburger trigger (visible on mobile/tablet) -->
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <div class="logo">
+        <i class="fas fa-chart-line"></i>
+        ComplyAnalyst
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="contact-btn desktop-contact">Contact Us</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <!-- tablet & mobile inline Contact Us button separate? Actually the reference second image:
-         "Tablet 768px: Logo | Contact Us" (without menu items). We'll make a separate contact pill that appears 
-         on small screens next to hamburger, so that experience matches: Logo, then Contact Us button, then hamburger.
-         Let's restructure: In .nav-container we will also place a .mobile-contact-inline that shows only on screens <= 900px.
-         This gives exactly "Logo" + "Contact Us" button + hamburger icon.
-    -->
-    <div class="nav-container" style="justify-content: space-between; padding-top: 0; padding-bottom: 0; margin-top: -0.2rem;">
-        <!-- This is a bit tricky: we already have one .nav-container, but we can add the inline contact inside the same container.
-             To avoid duplication, modify existing .nav-container: add an extra div group for right side.
-        -->
-    </div>
-</header>
-
-<!-- Restructured navbar right side to include tablet/mobile contact button -->
-<script>
-    (function adjustNavForMobileContact() {
-        // Ensure that on devices where desktop-contact is hidden, we show an inline contact button next to hamburger
-        const navContainer = document.querySelector('.navbar .nav-container');
-        if (!navContainer) return;
-        
-        // Check if inline mobile contact already exists to avoid duplicate
-        if (!document.querySelector('.mobile-inline-contact')) {
-            const mobileContactBtn = document.createElement('button');
-            mobileContactBtn.className = 'contact-btn mobile-inline-contact';
-            mobileContactBtn.innerText = 'Contact Us';
-            mobileContactBtn.style.marginRight = '12px';
-            // find hamburger button inside container
-            const hamburger = navContainer.querySelector('#hamburgerBtn');
-            if (hamburger) {
-                navContainer.insertBefore(mobileContactBtn, hamburger);
-            } else {
-                navContainer.appendChild(mobileContactBtn);
-            }
-            
-            // hide on desktop, show on max-width 900px
-            const style = document.createElement('style');
-            style.textContent = `
-                .mobile-inline-contact {
-                    display: none;
-                }
-                @media (max-width: 900px) {
-                    .mobile-inline-contact {
-                        display: inline-block;
-                    }
-                    .desktop-contact {
-                        display: none;
-                    }
-                }
-                @media (min-width: 901px) {
-                    .mobile-inline-contact {
-                        display: none !important;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
+  <!-- dynamic mobile contact helper (does not alter images) -->
+  <script>
+    (function enhanceMobileContact() {
+      const navContainer = document.querySelector('.navbar .nav-container');
+      if (!navContainer) return;
+      if (!document.querySelector('.mobile-inline-contact')) {
+        const mobileContactBtn = document.createElement('button');
+        mobileContactBtn.className = 'contact-btn mobile-inline-contact';
+        mobileContactBtn.innerText = 'Contact Us';
+        mobileContactBtn.style.marginRight = '12px';
+        const hamburger = navContainer.querySelector('#hamburgerBtn');
+        if (hamburger) {
+          navContainer.insertBefore(mobileContactBtn, hamburger);
+        } else {
+          navContainer.appendChild(mobileContactBtn);
         }
+        const style = document.createElement('style');
+        style.textContent = `
+          .mobile-inline-contact { display: none; }
+          @media (min-width: 768px) and (max-width: 900px) {
+            .mobile-inline-contact { display: inline-block; }
+            .desktop-contact { display: none; }
+          }
+          @media (min-width: 901px) { .mobile-inline-contact { display: none !important; } }
+        `;
+        document.head.appendChild(style);
+      }
     })();
-</script>
+  </script>
 
-<!-- Mobile Menu Panel (smooth side drawer) -->
-<div class="mobile-menu" id="mobileMenuPanel">
+  <!-- Mobile Menu Panel -->
+  <div class="mobile-menu" id="mobileMenuPanel">
     <button class="close-menu" id="closeMenuBtn" aria-label="Close menu">&times;</button>
     <ul class="mobile-nav-list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contact</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Our Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
     <button class="mobile-contact-btn" id="mobileContactBtn">Contact Us</button>
-</div>
-<div class="menu-overlay" id="menuOverlay"></div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-<!-- Hero & Features sections (original layout preserved, same as provided) -->
-<section class="hero">
+  <!-- Hero Section: left details + right large image (EXACT images/hero.png) -->
+  <section class="hero">
     <div class="hero-left">
-        <h1>Simplifying Compliance For Research Analysts</h1>
-        <p>Transform your workflow with our advanced compliance tools. Ensure accuracy, efficiency, and seamless reporting.</p>
-        <button class="hero-btn">Get Started</button>
+      <h1>Simplifying Compliance For Research Analysts</h1>
+      <p>Stay Focused On Your Insights—We’ll Handle The Compliance. Our Expert Solutions Ensure Your Research Practices Meet Every Regulatory Requirement With Confidence And Ease</p>
+      <div class="hero-btn-group">
+        <button class="hero-btn" id="getStartedBtn">Get Started <i class="fas fa-arrow-right"></i></button>
+        <button class="consult-outline" id="bookConsultBtn">Book A Consultation <i class="fas fa-calendar-check"></i></button>
+      </div>
     </div>
     <div class="hero-right">
-        <img src="images/hero.png" alt="hero image" onerror="this.onerror=null; this.src='https://placehold.co/600x450/EBF2F6/1b6b8f?text=Compliance+Visual'">
+      <img src="images/hero.png" alt="hero image" onerror="this.onerror=null; this.src='https://placehold.co/600x450/EBF2F6/1b6b8f?text=Compliance+Visual'">
     </div>
-</section>
+  </section>
 
-<section class="features">
+  <!-- Features Section: exactly as per design, using images/feature.png left & right cards -->
+  <section class="features">
     <div class="features-left">
-        <h2>Why Compliance Matters For Research Analysts</h2>
-        <img src="images/feature.png" alt="feature image" onerror="this.onerror=null; this.src='https://placehold.co/550x400/D9EAF2/1f5e7e?text=Regulatory+Illustration'">
+      <h2>Why Compliance Matters For Research Analysts</h2>
+      <img src="images/feature.png" alt="feature image" onerror="this.onerror=null; this.src='https://placehold.co/550x400/D9EAF2/1f5e7e?text=Regulatory+Illustration'">
     </div>
     <div class="features-right">
-        <p class="features-text"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of trust.</p>
-        <div class="feature-card">
-            <h3>Regulatory Clarity</h3>
-            <p>We decode complex compliance rules into simple actionable steps.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Hassle-Free Filings</h3>
-            <p>From registration to ongoing reporting — we manage it all.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Risk Protection</h3>
-            <p>Stay ahead of audits and compliance gaps with proactive support.</p>
-        </div>
+      <p class="features-text"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of trust.</p>
+      <div class="feature-card">
+        <h3>Regulatory Clarity</h3>
+        <p>We decode complex compliance rules into simple actionable steps.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Hassle-Free Filings</h3>
+        <p>From registration to ongoing reporting — we manage it all.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Risk Protection</h3>
+        <p>Stay ahead of audits and compliance gaps with proactive support.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<script>
-    (function() {
-        const hamburger = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenuPanel');
-        const overlay = document.getElementById('menuOverlay');
-        const closeBtn = document.getElementById('closeMenuBtn');
-        const body = document.body;
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
 
-        function openMenu() {
-            mobileMenu.classList.add('open');
-            overlay.classList.add('active');
-            body.classList.add('menu-open');
-        }
+  <script>
+    (function initInteractions() {
+      // mobile menu logic
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenuPanel');
+      const overlay = document.getElementById('menuOverlay');
+      const closeBtn = document.getElementById('closeMenuBtn');
+      const body = document.body;
 
-        function closeMenu() {
-            mobileMenu.classList.remove('open');
-            overlay.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
+      function openMenu() {
+        mobileMenu.classList.add('open');
+        overlay.classList.add('active');
+        body.classList.add('menu-open');
+      }
 
-        if (hamburger) hamburger.addEventListener('click', openMenu);
-        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-        if (overlay) overlay.addEventListener('click', closeMenu);
+      function closeMenu() {
+        mobileMenu.classList.remove('open');
+        overlay.classList.remove('active');
+        body.classList.remove('menu-open');
+      }
 
-        // close on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-                closeMenu();
-            }
+      if (hamburger) hamburger.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+      });
+      document.querySelectorAll('.mobile-nav-list a').forEach(link => link.addEventListener('click', closeMenu));
+
+      // contact buttons alert
+      const allContactBtns = document.querySelectorAll('.contact-btn, .mobile-contact-btn, .desktop-contact, .mobile-inline-contact');
+      allContactBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          alert('📞 Contact our compliance specialists — we’re here to help!');
+          if (mobileMenu.classList.contains('open')) closeMenu();
         });
+      });
+      
+      const heroBtn = document.getElementById('getStartedBtn');
+      if (heroBtn) {
+        heroBtn.addEventListener('click', () => alert('✨ Start your compliance journey with a free consultation.'));
+      }
+      const consultBtn = document.getElementById('bookConsultBtn');
+      if (consultBtn) {
+        consultBtn.addEventListener('click', () => alert('📅 Book a personalized consultation with our compliance experts.'));
+      }
 
-        // optional: also close when any mobile nav link clicked
-        const mobileLinks = document.querySelectorAll('.mobile-nav-list a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // both contact buttons (inline and mobile) smooth behavior
-        const contactBtns = document.querySelectorAll('.contact-btn, .mobile-contact-btn, .desktop-contact');
-        contactBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('Contact section — ready to assist you! (demo interaction)');
-                // if mobile menu open you may close it optionally
-                if (mobileMenu.classList.contains('open')) closeMenu();
-            });
-        });
-
-        // hero button same alert just for demonstration
-        const heroBtn = document.querySelector('.hero-btn');
-        if (heroBtn) {
-            heroBtn.addEventListener('click', () => alert('Get started with compliance tools.'));
+      // sticky navbar shadow
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
         }
+      });
+
+      // Scroll to top logic
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+      if (scrollBtn) {
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // subtle feature card hover effect
+      const cards = document.querySelectorAll('.feature-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transition = 'all 0.25s ease-out';
+        });
+      });
+      
+      const featureText = document.querySelector('.features-text');
+      if (featureText) {
+        featureText.style.cursor = 'pointer';
+        featureText.addEventListener('click', () => {
+          alert('Regulatory intelligence that simplifies your workload.');
+        });
+      }
     })();
-</script>
+  </script>
+  <style>
+    .contact-btn:active {
+      transform: scale(0.96);
+    }
+    .mobile-inline-contact {
+      transition: all 0.2s;
+    }
+    .scroll-top i {
+      font-size: 1.2rem;
+    }
+    a, button {
+      cursor: pointer;
+    }
+    /* ensure images never break layout */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
 </body>
+
 </html>
