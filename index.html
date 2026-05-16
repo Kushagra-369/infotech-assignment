@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Infotech | Compliance Solutions — Elevated Experience</title>
 
   <!-- Google Fonts + Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
@@ -20,7 +23,7 @@
       font-family: 'Inter', sans-serif;
       background: #fbfdff;
       color: #1a2c3e;
-      line-height: 1.5;
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
 
@@ -126,7 +129,7 @@
       background: #0f2b3d;
       border: none;
       padding: 0.6rem 1.6rem;
-      border-radius: 40px;
+      border-radius: 14px;
       font-weight: 600;
       font-size: 0.9rem;
       color: white;
@@ -150,7 +153,7 @@
       background: radial-gradient(circle at 30% 20%, #2a7f9c, #0e4057);
       transition: width 0.35s ease;
       z-index: -1;
-      border-radius: 40px;
+      border-radius: 14px;
     }
 
     .contact-btn:hover::before {
@@ -293,9 +296,9 @@
 
     /* ===== Hero Section - FIXED: full image on right, details left, exact alignment ===== */
     .hero {
-      max-width: 1280px;
-      margin: 3rem auto 2rem auto;
-      padding: 2rem 2rem;
+      max-width: 1240px;
+      margin: 2rem auto 4rem auto;
+      padding: 2rem 2.5rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -309,8 +312,9 @@
     }
 
     .hero-left h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
       line-height: 1.2;
       background: linear-gradient(to right, #0a2e42, #166b8f);
       -webkit-background-clip: text;
@@ -325,7 +329,7 @@
       color: #3a5b74;
       margin-bottom: 2rem;
       line-height: 1.5;
-      max-width: 95%;
+      max-width: 540px;
     }
 
     .hero-btn-group {
@@ -339,7 +343,7 @@
       background: #0f2b3d;
       border: none;
       padding: 0.85rem 2rem;
-      border-radius: 40px;
+      border-radius: 14px;
       font-weight: 600;
       font-size: 1rem;
       color: white;
@@ -379,7 +383,7 @@
       background: transparent;
       border: 1.5px solid #1b6b8f;
       padding: 0.85rem 2rem;
-      border-radius: 40px;
+      border-radius: 14px;
       font-weight: 600;
       font-size: 1rem;
       color: #1b6b8f;
@@ -429,7 +433,7 @@
       flex-wrap: wrap;
       gap: 3rem;
       background: #ffffff;
-      border-radius: 48px;
+      border-radius: 24px;
       align-items: center;
     }
 
@@ -469,7 +473,7 @@
     .features-text {
       font-size: 1.1rem;
       font-weight: 500;
-      background: #eef4fa;
+      background: #f5f8fc;
       padding: 1.2rem 1.6rem;
       border-radius: 28px;
       color: #1c5a7a;
@@ -486,7 +490,7 @@
 
     .feature-card {
       background: #ffffff;
-      border-radius: 24px;
+      border-radius: 18px;
       padding: 1.5rem 1.8rem;
       box-shadow: 0 10px 20px -5px rgba(0, 32, 64, 0.08);
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
@@ -495,7 +499,7 @@
     }
 
     .feature-card:hover {
-      transform: translateY(-8px) scale(1.01);
+      transform: translateY(-3px);
       box-shadow: 0 24px 36px -14px rgba(15, 67, 92, 0.2);
       border-color: rgba(27, 107, 143, 0.3);
       background: #ffffff;
@@ -571,6 +575,11 @@
     }
 
     @media (max-width: 768px) {
+      .hero-right img {
+        max-width: 88%;
+        margin: 0 auto;
+      }
+
       .hero-left h1 {
         font-size: 2.4rem;
       }
@@ -599,6 +608,13 @@
     }
 
     @media (max-width: 480px) {
+
+      .hero-btn,
+      .consult-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
       .hero-left h1 {
         font-size: 1.9rem;
       }
@@ -649,7 +665,7 @@
     <div class="nav-container">
       <div class="logo">
         <i class="fas fa-chart-line"></i>
-        ComplyAnalyst
+        InfoCompliance
       </div>
       <nav>
         <ul class="nav-links">
@@ -719,14 +735,17 @@
   <section class="hero">
     <div class="hero-left">
       <h1>Simplifying Compliance For Research Analysts</h1>
-      <p>Stay Focused On Your Insights—We’ll Handle The Compliance. Our Expert Solutions Ensure Your Research Practices Meet Every Regulatory Requirement With Confidence And Ease</p>
+      <p>Stay Focused On Your Insights—We’ll Handle The Compliance. Our Expert Solutions Ensure Your Research Practices
+        Meet Every Regulatory Requirement With Confidence And Ease</p>
       <div class="hero-btn-group">
         <button class="hero-btn" id="getStartedBtn">Get Started <i class="fas fa-arrow-right"></i></button>
-        <button class="consult-outline" id="bookConsultBtn">Book A Consultation <i class="fas fa-calendar-check"></i></button>
+        <button class="consult-outline" id="bookConsultBtn">Book A Consultation <i
+            class="fas fa-calendar-check"></i></button>
       </div>
     </div>
     <div class="hero-right">
-      <img src="images/hero.png" alt="hero image" onerror="this.onerror=null; this.src='https://placehold.co/600x450/EBF2F6/1b6b8f?text=Compliance+Visual'">
+      <img src="images/hero.png" alt="hero image"
+        onerror="this.onerror=null; this.src='https://placehold.co/600x450/EBF2F6/1b6b8f?text=Compliance+Visual'">
     </div>
   </section>
 
@@ -734,10 +753,12 @@
   <section class="features">
     <div class="features-left">
       <h2>Why Compliance Matters For Research Analysts</h2>
-      <img src="images/feature.png" alt="feature image" onerror="this.onerror=null; this.src='https://placehold.co/550x400/D9EAF2/1f5e7e?text=Regulatory+Illustration'">
+      <img src="images/feature.png" alt="feature image"
+        onerror="this.onerror=null; this.src='https://placehold.co/550x400/D9EAF2/1f5e7e?text=Regulatory+Illustration'">
     </div>
     <div class="features-right">
-      <p class="features-text"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of trust.</p>
+      <p class="features-text"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> In today’s regulatory
+        environment, even a small oversight can lead to penalties, reputational risks, and loss of trust.</p>
       <div class="feature-card">
         <h3>Regulatory Clarity</h3>
         <p>We decode complex compliance rules into simple actionable steps.</p>
@@ -794,7 +815,7 @@
           if (mobileMenu.classList.contains('open')) closeMenu();
         });
       });
-      
+
       const heroBtn = document.getElementById('getStartedBtn');
       if (heroBtn) {
         heroBtn.addEventListener('click', () => alert('✨ Start your compliance journey with a free consultation.'));
@@ -836,7 +857,7 @@
           card.style.transition = 'all 0.25s ease-out';
         });
       });
-      
+
       const featureText = document.querySelector('.features-text');
       if (featureText) {
         featureText.style.cursor = 'pointer';
@@ -850,15 +871,20 @@
     .contact-btn:active {
       transform: scale(0.96);
     }
+
     .mobile-inline-contact {
       transition: all 0.2s;
     }
+
     .scroll-top i {
       font-size: 1.2rem;
     }
-    a, button {
+
+    a,
+    button {
       cursor: pointer;
     }
+
     /* ensure images never break layout */
     img {
       max-width: 100%;
